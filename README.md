@@ -13,9 +13,9 @@
 > 
 > Some of the services provided within the application are:
 - > Book exchange platform where users can list books they own and search for books they want.
-> A user-friendly messaging system for coordinating book swaps.
-> Review and rating system for books and swapping experiences.
-> Admin moderation to ensure a safe and fair exchange environment.
+- > A user-friendly messaging system for coordinating book swaps.
+- > Review and rating system for books and swapping experiences.
+- > Admin moderation to ensure a safe and fair exchange environment.
 
 ## App Functions
 1. Customer (the user looking to swap books):
