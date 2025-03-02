@@ -3,71 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Provider Dashboard</title>
+    <title>Manage Listings - BookSwap Hub</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
- <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
+<header class="bg-dark text-light py-5 text-center">
+    <h1 class="fw-bold text-uppercase">BookSwap Hub</h1>
+    <h2 class="text-warning">Manage Your Listings</h2>
+</header>
 
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Products</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Store</a></li>
-			<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="provider.html">Provider Dashboard</a>
-			<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="listings.html">Manage Books</a>
-			<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="requests.html">Swap Requests</a>
-			<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="stats.html">Profile</a>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4 bg-dark" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">BookSwap Hub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="home.html">Home</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase active" href="provider.html">Manage Books</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="requests.html">Swap Requests</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="listings.html">Listings</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="stats.html">Profile</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container mt-4">
-    <h2>Welcome, Provider!</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Books Listed</h5>
-                    <p class="card-text">You have <strong>5</strong> books available for swap.</p>
-                    <a href="provider-books.html" class="btn btn-primary">Manage Books</a>
-                </div>
+<!-- Manage Listings Section -->
+<section class="page-section">
+    <div class="container">
+        <div class="bg-light p-5 rounded shadow">
+            <h2 class="text-center text-dark">Your Listed Books</h2>
+            <p class="text-center text-muted">View and manage the books you have listed for swapping. Add new books, update details, or remove listings as needed.</p>
+            <div class="text-center mb-4">
+                <button class="btn btn-warning">Add New Book</button>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Pending Requests</h5>
-                    <p class="card-text">You have <strong>2</strong> pending swap requests.</p>
-                    <a href="provider-requests.html" class="btn btn-warning">View Requests</a>
+            <div class="row">
+                <!-- Example Book Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow">
+                        <img src="assets/img/book1.jpg" class="card-img-top" alt="Book 1">
+                        <div class="card-body">
+                            <h5 class="card-title">The Great Gatsby</h5>
+                            <p class="card-text">by F. Scott Fitzgerald</p>
+                            <button class="btn btn-danger w-100">Remove Listing</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Profile Settings</h5>
-                    <p class="card-text">Update your contact and availability details.</p>
-                    <a href="provider-profile.html" class="btn btn-secondary">Edit Profile</a>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow">
+                        <img src="assets/img/book2.jpg" class="card-img-top" alt="Book 2">
+                        <div class="card-body">
+                            <h5 class="card-title">To Kill a Mockingbird</h5>
+                            <p class="card-text">by Harper Lee</p>
+                            <button class="btn btn-danger w-100">Remove Listing</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow">
+                        <img src="assets/img/book3.jpg" class="card-img-top" alt="Book 3">
+                        <div class="card-body">
+                            <h5 class="card-title">1984</h5>
+                            <p class="card-text">by George Orwell</p>
+                            <button class="btn btn-danger w-100">Remove Listing</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<footer class="footer text-faded text-center py-5">
-            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2023</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+<!-- Footer -->
+<footer class="footer text-center py-4 bg-dark text-light">
+    <div class="container">
+        <p class="m-0 small">Copyright &copy; BookSwap Hub 2025</p>
+    </div>
+</footer>
 
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS -->
+<script src="js/scripts.js"></script>
 </body>
 </html>
