@@ -30,10 +30,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="customer.html">Dashboard</a></li>
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="books.html">Books</a></li>
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase active" href="profile.html">Profile</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="logout.html">Logout</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="reviews.html">Reviews</a></li>
+        <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase" href="#" onclick="logout()">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -49,14 +52,15 @@
       </h2>
       <div class="row">
         <div class="col-md-4 text-center">
-          <img src="assets/img/profile-avatar.jpg" class="rounded-circle img-fluid" alt="User Avatar" width="150">
+          <img src="../assets/img/profile-avatar.jpg" class="rounded-circle img-fluid" alt="User Avatar" width="150">
         </div>
         <div class="col-md-8">
           <p><strong>Username:</strong> booklover123</p>
           <p><strong>Email:</strong> booklover@example.com</p>
           <p><strong>Location:</strong> New York, USA</p>
           <p><strong>Member Since:</strong> January 2024</p>
-          <button class="btn btn-primary">Edit Profile</button>
+          <p><strong>Favorite Genres:</strong> Fiction, Mystery, Sci-Fi</p>
+          <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
         </div>
       </div>
     </div>
@@ -68,38 +72,38 @@
   <div class="container">
     <h2 class="text-center">Your Listed Books</h2>
     <div class="row">
-      <!-- Book 1 -->
+      <!-- Book 4 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="assets/img/book1.jpg" class="card-img-top" alt="Book 1">
+          <img src="../assets/img/book4.jpg" class="card-img-top" alt="Book 1">
           <div class="card-body">
             <h5 class="card-title">Pride and Prejudice</h5>
             <p class="card-text">by Jane Austen</p>
-            <button class="btn btn-danger w-100">Remove Listing</button>
+            <button class="btn btn-danger btn-sm" onclick="removeListing(this)">Remove Listing</button>
           </div>
         </div>
       </div>
 
-      <!-- Book 2 -->
+      <!-- Book 5 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="assets/img/book2.jpg" class="card-img-top" alt="Book 2">
+          <img src="../assets/img/book5.jpg" class="card-img-top" alt="Book 2">
           <div class="card-body">
             <h5 class="card-title">The Catcher in the Rye</h5>
             <p class="card-text">by J.D. Salinger</p>
-            <button class="btn btn-danger w-100">Remove Listing</button>
+            <button class="btn btn-danger btn-sm" onclick="removeListing(this)">Remove Listing</button>
           </div>
         </div>
       </div>
 
-      <!-- Book 3 -->
+      <!-- Book 6 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="assets/img/book3.jpg" class="card-img-top" alt="Book 3">
+          <img src="../assets/img/book6.jpg" class="card-img-top" alt="Book 3">
           <div class="card-body">
             <h5 class="card-title">Moby Dick</h5>
             <p class="card-text">by Herman Melville</p>
-            <button class="btn btn-danger w-100">Remove Listing</button>
+            <button class="btn btn-danger btn-sm" onclick="removeListing(this)">Remove Listing</button>
           </div>
         </div>
       </div>
@@ -116,10 +120,12 @@
       <div class="col-md-6 mb-4">
         <div class="card">
           <div class="card-body">
+
             <h5 class="card-title">Requested: The Hobbit</h5>
             <p class="card-text">by J.R.R. Tolkien</p>
             <p>Status: Pending</p>
-            <button class="btn btn-warning w-100">Cancel Request</button>
+            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#swapDetailsModal">View Details</button>
+            <button class="btn btn-danger btn-sm" onclick="cancelRequest(this)">Cancel Request</button>
           </div>
         </div>
       </div>
@@ -131,13 +137,58 @@
             <h5 class="card-title">Requested: The Alchemist</h5>
             <p class="card-text">by Paulo Coelho</p>
             <p>Status: Approved</p>
-            <button class="btn btn-success w-100">View Details</button>
+            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#swapDetailsModal">View Details</button>
+            <button class="btn btn-danger btn-sm" onclick="cancelRequest(this)">Cancel Request</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Edit Profile Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <label>Name:</label>
+        <input type="text" class="form-control mb-2" value="John Doe">
+        <label>Email:</label>
+        <input type="email" class="form-control mb-2" value="johndoe@example.com">
+        <label>Favorite Genres:</label>
+        <input type="text" class="form-control" value="Fiction, Mystery, Sci-Fi">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-dismiss="modal">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Swap Details Modal -->
+<div class="modal fade" id="swapDetailsModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Swap Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Book:</strong> The Great Gatsby</p>
+        <p><strong>Requested From:</strong> Jane Smith</p>
+        <p><strong>Request Date:</strong> March 2, 2025</p>
+        <p><strong>Status:</strong> Pending</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer text-faded text-center py-5 bg-dark text-light">
@@ -148,5 +199,41 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS -->
 <script src="js/scripts.js"></script>
+<!-- Logout Script -->
+<script>
+  function logout() {
+      // Debugging: Check if the function is being triggered
+      console.log("Logout button clicked");
+
+      let confirmLogout = confirm("Are you sure you want to log out?");
+
+      if (confirmLogout) {
+          console.log("User confirmed logout"); // Debugging message
+          window.location.href = "../index.html"; // Redirects to homepage
+      } else {
+          console.log("User canceled logout"); // Debugging message
+      }
+  }
+
+  function removeListing(button) {
+      console.log("Remove listing button clicked"); // Debugging log
+      let row = button.parentNode.parentNode; // Traverse up to the <tr>
+      if (confirm("Are you sure you want to remove this book?")) {
+          row.remove();
+          console.log("Book listing removed");
+      }
+  }
+
+function cancelRequest(button) {
+      console.log("Cancel request button clicked"); // Debugging log
+      let row = button.parentNode.parentNode; // Traverse up to the <tr>
+      if (confirm("Are you sure you want to cancel this request?")) {
+          row.remove();
+          console.log("Swap request canceled");
+      }
+  }
+
+
+</script>
 </body>
 </html>

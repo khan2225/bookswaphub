@@ -29,29 +29,34 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="customer.html">Home</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="customer.html">Dashboard</a></li>
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase active" href="books.html">Books</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="reviews.html">Reviews</a></li>
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="profile.html">Profile</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="logout.html">Logout</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="reviews.html">Reviews</a></li>
+        <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase" href="#" onclick="logout()">Logout</a>
+        </li>
+
       </ul>
     </div>
   </div>
 </nav>
 
 <!-- Available Books Section -->
-<section class="page-section">
+<!-- Available Books Section -->
+<section class="page-section mt-5">
   <div class="container">
-    <div class="product-item">
-      <div class="product-item-title d-flex">
-        <div class="bg-faded p-5 d-flex ms-auto rounded">
-          <h2 class="section-heading mb-0">
+    <div class="row">
+      <!-- Find Your Next Read (Now Full Width & Better Positioned) -->
+      <div class="col-12 mb-4 text-center">
+        <div class="bg-warning text-dark p-4 rounded">
+          <h2 class="section-heading mb-2">
             <span class="section-heading-upper">Find Your Next Read</span>
             <span class="section-heading-lower">Available Books</span>
           </h2>
         </div>
       </div>
-      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/bookshelf.jpg" alt="Bookshelf" />
+      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"   />
       <div class="product-item-description d-flex me-auto">
         <div class="bg-faded p-5 rounded">
           <p class="mb-0">Browse through a variety of books listed by fellow readers. Whether you love fiction, non-fiction, or niche genres, you can find and request books that match your interests.</p>
@@ -68,11 +73,11 @@
       <!-- Example Book Card 1 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="assets/img/book1.jpg" class="card-img-top" alt="Book 1">
+          <img src="../assets/img/book1.jpg" class="card-img-top" alt="Book 1">
           <div class="card-body">
             <h5 class="card-title">The Great Gatsby</h5>
             <p class="card-text">by F. Scott Fitzgerald</p>
-            <button class="btn btn-success w-100">Request Swap</button>
+            <a href = "swaps.html" class="btn btn-success w-100">Request Swap</a>
           </div>
         </div>
       </div>
@@ -80,11 +85,11 @@
       <!-- Example Book Card 2 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="assets/img/book2.jpg" class="card-img-top" alt="Book 2">
+          <img src="../assets/img/book2.jpg" class="card-img-top" alt="Book 2">
           <div class="card-body">
             <h5 class="card-title">To Kill a Mockingbird</h5>
             <p class="card-text">by Harper Lee</p>
-            <button class="btn btn-success w-100">Request Swap</button>
+            <a href = "swaps.html" class="btn btn-success w-100">Request Swap</a>
           </div>
         </div>
       </div>
@@ -92,11 +97,11 @@
       <!-- Example Book Card 3 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="assets/img/book3.jpg" class="card-img-top" alt="Book 3">
+          <img src="../assets/img/book3.jpg" class="card-img-top" alt="Book 3">
           <div class="card-body">
             <h5 class="card-title">1984</h5>
             <p class="card-text">by George Orwell</p>
-            <button class="btn btn-success w-100">Request Swap</button>
+            <a href = "swaps.html" class="btn btn-success w-100">Request Swap</a>
           </div>
         </div>
       </div>
@@ -113,5 +118,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS -->
 <script src="js/scripts.js"></script>
+
+<!-- Logout Script -->
+ <script>
+    function logout() {
+        // Debugging: Check if the function is being triggered
+        console.log("Logout button clicked");
+
+        let confirmLogout = confirm("Are you sure you want to log out?");
+
+        if (confirmLogout) {
+            console.log("User confirmed logout"); // Debugging message
+            window.location.href = "../index.html"; // Redirects to homepage
+        } else {
+            console.log("User canceled logout"); // Debugging message
+        }
+    }
+</script>
+
 </body>
 </html>
