@@ -30,8 +30,4 @@
     3. View Swap statistics -  Users can track how many books they have swapped and any pending requests.
     4. Reply to reviews - Users can respond to feedback left by those who have received books from them.
   
-4. SysAdmin (Administrator managing the platform):
-    1. Manage User Access - Admins can approve or suspend accounts to maintain platform integrity
-    2. Moderate Book Listings - Admins can ensure books listed comply with community guidelines.
-    3. Moderate reviews - Admins can review reported reviews to prevent inappropriate content.
-    4. View usage statistics - Admins can track platform activity, including the number of swaps, active users, and reported issues.
+
